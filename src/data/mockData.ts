@@ -1,0 +1,131 @@
+import { User, Post, Comment } from "@/types";
+
+export const mockUsers: User[] = [
+  {
+    id: "1",
+    username: "elena_writes",
+    email: "elena@example.com",
+    bio: "Writer, dreamer, coffee enthusiast. Exploring the intersection of technology and humanity.",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+    joinedAt: new Date("2024-01-15"),
+    postsCount: 42,
+    likesCount: 1284,
+    commentsCount: 156,
+  },
+  {
+    id: "2",
+    username: "marcus_dev",
+    email: "marcus@example.com",
+    bio: "Software architect by day, amateur philosopher by night. Building things that matter.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    joinedAt: new Date("2024-02-20"),
+    postsCount: 28,
+    likesCount: 892,
+    commentsCount: 234,
+  },
+  {
+    id: "3",
+    username: "sarah_thoughts",
+    email: "sarah@example.com",
+    bio: "Product designer with opinions. Making the web a little more beautiful, one pixel at a time.",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    joinedAt: new Date("2024-03-10"),
+    postsCount: 67,
+    likesCount: 2341,
+    commentsCount: 412,
+  },
+  {
+    id: "4",
+    username: "alex_creates",
+    email: "alex@example.com",
+    bio: "Creative director & visual storyteller. Finding beauty in the mundane.",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    joinedAt: new Date("2024-04-05"),
+    postsCount: 35,
+    likesCount: 1567,
+    commentsCount: 189,
+  },
+];
+
+export const mockPosts: Post[] = [
+  {
+    id: "1",
+    content: "Just finished reading 'The Design of Everyday Things' for the third time. Every read reveals something new about how we interact with the world around us. The best design is invisible—it just works.\n\nWhat books have shaped how you think about your craft?",
+    author: mockUsers[2],
+    createdAt: new Date(Date.now() - 1000 * 60 * 30),
+    likesCount: 47,
+    commentsCount: 12,
+    isLiked: false,
+  },
+  {
+    id: "2",
+    content: "There's something magical about writing code at 2 AM when the world is quiet. No Slack notifications, no meetings, just you and the problem you're trying to solve.\n\nIs it healthy? Probably not. Is it productive? Absolutely.",
+    author: mockUsers[1],
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 2),
+    likesCount: 89,
+    commentsCount: 23,
+    isLiked: true,
+  },
+  {
+    id: "3",
+    content: "Spent the morning at a local café watching people work on their laptops. Everyone looked so focused, so purposeful. Made me wonder about all the different dreams being pursued in that small space.\n\nWe're all building something, aren't we?",
+    author: mockUsers[0],
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 5),
+    likesCount: 156,
+    commentsCount: 34,
+    isLiked: false,
+  },
+  {
+    id: "4",
+    content: "Hot take: the best products aren't the ones with the most features. They're the ones that do one thing exceptionally well.\n\nSimplicity is the ultimate sophistication, and complexity is often just a lack of clarity in disguise.",
+    author: mockUsers[3],
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 8),
+    likesCount: 234,
+    commentsCount: 56,
+    isLiked: true,
+  },
+  {
+    id: "5",
+    content: "Three years ago, I quit my corporate job to pursue writing full-time. Best decision I ever made.\n\nNot because of the money (still figuring that out), but because I wake up every day excited about what I get to create.\n\nFollow your curiosity. It knows things you don't.",
+    author: mockUsers[0],
+    createdAt: new Date(Date.now() - 1000 * 60 * 60 * 24),
+    likesCount: 412,
+    commentsCount: 78,
+    isLiked: false,
+  },
+];
+
+export const mockComments: Comment[] = [
+  {
+    id: "c1",
+    content: "Couldn't agree more. 'Thinking, Fast and Slow' had a similar impact on me.",
+    author: mockUsers[1],
+    postId: "1",
+    createdAt: new Date(Date.now() - 1000 * 60 * 20),
+  },
+  {
+    id: "c2",
+    content: "The night owl programmer life! I've written my best code between midnight and 4 AM.",
+    author: mockUsers[0],
+    postId: "2",
+    createdAt: new Date(Date.now() - 1000 * 60 * 45),
+  },
+  {
+    id: "c3",
+    content: "This is beautiful. We often underestimate the power of shared spaces.",
+    author: mockUsers[3],
+    postId: "3",
+    createdAt: new Date(Date.now() - 1000 * 60 * 60),
+  },
+];
+
+export const currentUser: User = {
+  id: "current",
+  username: "you",
+  email: "you@example.com",
+  bio: "Just getting started on my journey.",
+  joinedAt: new Date(),
+  postsCount: 0,
+  likesCount: 0,
+  commentsCount: 0,
+};
